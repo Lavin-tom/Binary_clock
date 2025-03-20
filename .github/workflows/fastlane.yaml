@@ -13,21 +13,17 @@ jobs:
     runs-on: ubuntu-24.04
     
     steps:
-      # Checkout the repository code
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      # Set up Java (update to version 3)
       - name: Set up Java 11
         uses: actions/setup-java@v3
         with:
           java-version: '11'
         
-      # Run the build process (example: build with Maven)
       - name: Build with Maven
         run: mvn clean install
 
-      # Upload artifact (update to version 3)
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:
